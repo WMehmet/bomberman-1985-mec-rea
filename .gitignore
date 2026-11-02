@@ -1,0 +1,15 @@
+# Build outputs
+*.o
+*.obj
+bomberman
+bomberman.exe
+*.AppImage
+*.dll
+test_*
+
+# Game save & cache data
+*.dat
+
+# OS metadata
+.DS_Store
+Thumbs.db

@@ -1,0 +1,31 @@
+# Makefile for Windows (MinGW / MSYS2 / Clang)
+# Usage on Windows MSYS2 / MinGW:
+#   mingw32-make -f Makefile.win
+# Or cross-compiling from Linux:
+#   make -f Makefile.win CC=x86_64-w64-mingw32-gcc WINDRES=x86_64-w64-mingw32-windres
+
+CC ?= gcc
+WINDRES ?= windres
+CFLAGS ?= -O2 -Wall -Wextra -std=c99
+LDFLAGS ?= -static -s -Wl,--insert-timestamp -Wl,--subsystem,windows:6.0 -Wl,-e,mainCRTStartup -Wl,--dynamicbase -Wl,--nxcompat -Wl,--high-entropy-va -lmingw32 -lSDL2main -lSDL2 -lm -mwindows -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lsetupapi -lversion -luxtheme
+
+TARGET = bomberman.exe
+SRC = src/main.c src/game.c src/graphics.c src/audio.c src/settings.c src/font.c src/scores.c
+OBJ = $(SRC:.c=.o) bomberman_res.o
+
+all: $(TARGET)
+
+$(TARGET): $(OBJ)
+	$(CC) $(OBJ) -o $(TARGET) $(LDFLAGS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+bomberman_res.o: bomberman.rc icon.ico bomberman.manifest
+	$(WINDRES) bomberman.rc -O coff -o $@
+
+clean:
+	rm -f src/*.o bomberman_res.o $(TARGET)
+	@del /Q src\*.o bomberman_res.o $(TARGET) 2>nul || exit 0
+
+.PHONY: all clean

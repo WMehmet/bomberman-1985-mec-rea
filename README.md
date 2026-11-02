@@ -12,6 +12,20 @@ Orijinal 1985 Nintendo Famicom / NES Bomberman oyununun 6502 assembly kaynak kod
 
 ---
 
+## 📥 Hazır Oyunu İndir (Doğrudan Oyna)
+
+Oyunu derlemekle uğraşmadan hemen oynamak için işletim sisteminize uygun hazır taşınabilir sürümü buradan indirebilirsiniz:
+
+* **🪟 Windows Kullanıcıları İçin:**  
+  👉 [**bomberman.exe (Windows 10/11 İçin İndir)**](https://github.com/WMehmet/bomberman-1985-mec-rea/releases/download/v1.0.0/bomberman.exe) *(~2.6 MB)*  
+  *Herhangi bir kurulum veya ek DLL gerektirmez. Çift tıklayarak hemen oynayabilirsiniz.*
+
+* **🐧 Linux Kullanıcıları İçin:**  
+  👉 [**Bomberman-1985-MEC-REA.AppImage (Linux İçin İndir)**](https://github.com/WMehmet/bomberman-1985-mec-rea/releases/download/v1.0.0/Bomberman-1985-MEC-REA.AppImage) *(~960 KB)*  
+  *Ubuntu, Arch, Fedora, Debian ve tüm Linux dağıtımlarında tek tıkla çalışır.*
+
+---
+
 ## 🌟 Öne Çıkan Özellikler (Key Features)
 
 * **Orijinal NES Fiziği & Mekanikleri (1:1 Frame-Perfect):**
